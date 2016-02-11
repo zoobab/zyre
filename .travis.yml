@@ -12,6 +12,7 @@ services:
 
 env:
 - BUILD_TYPE=default
+- BUILD_TYPE=nodejs
 - BUILD_TYPE=android
 - BUILD_TYPE=cmake
 - BUILD_TYPE=check_zproto
