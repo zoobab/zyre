@@ -24,6 +24,8 @@
 #   After running this, you must re-configure in each project if you want
 #   a normal build.
 
+set -x
+
 function build {
     PROJECT=$1
     REPO=$2
@@ -121,7 +123,6 @@ for ARG in $*; do
 done
 
 echo "I: resolving dependencies for Zyre:"
-( build libsodium https://github.com/jedisct1/libsodium.git stable )
 ( build libzmq https://github.com/zeromq/libzmq.git )
 ( build czmq https://github.com/zeromq/czmq.git )
 ( build zyre )
@@ -130,7 +131,7 @@ echo "I: building Node.js binding:"
 cd $BUILD_ROOT
 test ! -d node_modules/nan && npm install nan@latest --save
 test ! -d node_modules/bindings && npm install bindings --save-dev
-command -v node-gyp >/dev/null 2>&1 || npm install node-gyp
+npm install node-gyp
 
 #   Still not sure of this
 if [ $ELECTRON -eq 1 ]; then
