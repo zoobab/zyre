@@ -130,6 +130,7 @@ echo "I: building Node.js binding:"
 cd $BUILD_ROOT
 test ! -d node_modules/nan && npm install nan@latest --save
 test ! -d node_modules/bindings && npm install bindings --save-dev
+command -v node-gyp >/dev/null 2>&1 || npm install node-gyp
 
 #   Still not sure of this
 if [ $ELECTRON -eq 1 ]; then
