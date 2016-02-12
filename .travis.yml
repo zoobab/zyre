@@ -2,7 +2,7 @@
 language: c
 
 os:
-- linux
+#- linux
 - osx
 
 sudo: false
@@ -11,12 +11,12 @@ services:
 - docker
 
 env:
-- BUILD_TYPE=default
+#- BUILD_TYPE=default
 - BUILD_TYPE=nodejs
-- BUILD_TYPE=android
-- BUILD_TYPE=cmake
-- BUILD_TYPE=check_zproto
-- BUILD_TYPE=check_zproject
+#- BUILD_TYPE=android
+#- BUILD_TYPE=cmake
+#- BUILD_TYPE=check_zproto
+#- BUILD_TYPE=check_zproject
 
 addons:
   apt:
